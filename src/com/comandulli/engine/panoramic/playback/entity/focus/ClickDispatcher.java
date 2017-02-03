@@ -2,7 +2,6 @@ package com.comandulli.engine.panoramic.playback.entity.focus;
 
 import android.util.Log;
 
-import com.comandulli.engine.panoramic.platform.video.engine.VideoPlayerEngine;
 import com.comandulli.engine.panoramic.playback.engine.core.Engine;
 import com.comandulli.engine.panoramic.playback.engine.core.Entity;
 import com.comandulli.engine.panoramic.playback.engine.input.Input;
@@ -38,7 +37,7 @@ public class ClickDispatcher extends Entity {
     public void start() {
         super.start();
         ballEntity = new Entity("TOUCH_BALL");
-        ballEntity.addComponent(new MeshRenderer(VideoPlayerEngine.MESH_SPHERE, new Material(VideoPlayerEngine.SHADER_COLOR, Color.RED)));
+        ballEntity.addComponent(new MeshRenderer(debugMesh, new Material(debugShader, Color.RED)));
         ballEntity.setEnabled(false);
         ballEntity.transform.scale.scale(1.0f);
         Engine.getScene().addEntity(ballEntity);
